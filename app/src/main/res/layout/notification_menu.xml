@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.PromoLac.FCM.Notification">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_rounded_shape"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/calibri"
+            android:hint="Notification Title"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#aeaeae"
+            android:textSize="14sp" >
+        </EditText>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp">
+
+        </View>
+
+        <EditText
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_rounded_shape"
+            android:drawableRight="@drawable/message"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/calibri"
+            android:hint="Notification Message"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#aeaeae"
+            android:textSize="14sp" >
+        </EditText>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp">
+
+        </View>
+
+        <Button
+            android:id="@+id/defaultbutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Default Priority ">
+        </Button>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp">
+        </View>
+
+        <Button
+            android:id="@+id/highbutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="High Priority ">
+        </Button>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp">
+        </View>
+        <Button
+            android:id="@+id/lowbutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Low Priority ">
+
+        </Button>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp">
+
+        </View>
+
+        <Button
+            android:id="@+id/nobutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="No Priority ">
+
+        </Button>
+
+    </LinearLayout>
+
+
+</LinearLayout>

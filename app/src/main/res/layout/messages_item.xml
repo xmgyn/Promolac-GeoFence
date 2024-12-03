@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/message_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient4"
+    android:weightSum="100">
+
+
+    <LinearLayout
+
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:id="@+id/bilalmade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/MessagesItem_Image"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:src="@drawable/message" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:orientation="vertical"
+            android:weightSum="50">
+
+            <TextView
+                android:id="@+id/MessagesItem_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:fontFamily="@font/calibri"
+                android:hint="Title here"
+                android:textColor="#e5e5e5"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/MessagesItem_Content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="35"
+                android:fontFamily="@font/calibri"
+                android:textColor="#e5e5e5"
+                android:hint="Content Here"
+                android:textSize="12dp" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/MessagesItem_Time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:fontFamily="@font/calibri"
+            android:gravity="center"
+            android:textColor="#e5e5e5"
+            android:hint="Time here"
+            android:textSize="12dp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/bilalmade"
+        android:layout_marginTop="8dp"
+        android:background="#E5E5E5"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
+
+</RelativeLayout>

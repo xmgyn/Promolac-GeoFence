@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.PromoLac.Main2Activity">
+
+    <android.support.design.widget.AppBarLayout
+
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:fadeScrollbars="true"
+
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/AppTheme.Toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
+                        <LinearLayout
+                            android:id="@+id/dashboardlA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="15"
+                            android:orientation="horizontal"
+                            android:paddingRight="8dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/dashboard"
+                                android:layout_width="30dp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/promolac_logo" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="70"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/search_button"
+                                android:hapticFeedbackEnabled="true"
+                                android:layout_width="310dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/buttonshape"
+                                android:drawableLeft="@drawable/ic_search_light_gray_24dp"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/calibri"
+                                android:hint="What are you looking for ?"
+                                android:padding="9dp"
+                                android:textColor="#3C3C3C"
+                                android:textColorHint="#aeaeae"
+                                android:textSize="12sp"></EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="15"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_gravity="center"
+                                android:paddingLeft="8dp"
+                                android:src="@drawable/ai" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="4dp"
+                        android:fontFamily="@font/calibri"
+                        android:padding="8dp"
+                        android:text="Category"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <!--                <HorizontalScrollView-->
+                    <!--                    android:layout_width="match_parent"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_marginBottom="4dp"-->
+                    <!--                    android:scrollbars="none">-->
+
+                    <!--                    <LinearLayout-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:orientation="horizontal"-->
+                    <!--                        android:padding="8dp">-->
+
+                    <!--                        <android.support.v7.widget.CardView-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_marginLeft="4dp"-->
+                    <!--                            app:cardCornerRadius="8dp"-->
+                    <!--                            app:cardElevation="4dp"-->
+                    <!--                            app:cardUseCompatPadding="true"-->
+                    <!--                            app:contentPadding="12dp">-->
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/itemRecyclerView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="10dp">
+
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutForLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffff"
+                            android:orientation="vertical"
+                            android:paddingBottom="10dp"
+                            android:padding="15dp">
+
+                            <TextView
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:id="@+id/locationsetHere_textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="location here"
+                                android:textColor="#000000"
+                                android:textSize="10dp" />
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+
+
+
+
+                    <!---Slider Work-->
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cv_slider_mainActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="16dp"
+                        app:cardCornerRadius="8dp">
+
+                        <com.smarteist.autoimageslider.SliderView
+                            android:id="@+id/imageSlider"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            app:sliderAnimationDuration="600"
+                            app:sliderAutoCycleDirection="back_and_forth"
+                            app:sliderIndicatorAnimationDuration="600"
+                            app:sliderIndicatorGravity="center_horizontal|bottom"
+                            app:sliderIndicatorMargin="15dp"
+                            app:sliderIndicatorOrientation="horizontal"
+                            app:sliderIndicatorPadding="3dp"
+                            app:sliderIndicatorRadius="2dp"
+                            app:sliderIndicatorSelectedColor="#5A5A5A"
+                            app:sliderIndicatorUnselectedColor="#FFF"
+                            app:sliderScrollTimeInSec="1" />
+
+                    </android.support.v7.widget.CardView>
+
+
+
+
+
+                    <!--                        </android.support.v7.widget.CardView>-->
+
+                    <!--                    </LinearLayout>-->
+
+                    <!--                </HorizontalScrollView>-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:fontFamily="@font/calibri"
+                        android:padding="8dp"
+                        android:text="Hot Deals"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="64dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:weightSum="100">
+
+
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/LocationBasedDeals"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_weight="50"
+                                    app:cardCornerRadius="16dp">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/hotItem1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="200dp"
+                                            android:scaleType="centerCrop" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentBottom="true"
+                                            android:background="#4D000000"
+                                            android:orientation="vertical"
+                                            android:padding="8dp">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/calibri"
+                                                android:text="Foods"
+                                                android:textColor="#FFFFFF"
+                                                android:textSize="14sp"
+                                                android:textStyle="bold" />
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="4dp"
+                                                android:orientation="horizontal"
+                                                android:weightSum="100">
+
+                                                <TextView
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="80"
+                                                    android:fontFamily="@font/calibri"
+                                                    android:text="Rs 1k - 5k"
+                                                    android:textColor="#FFFFFF"
+                                                    android:textSize="12sp"
+                                                    android:textStyle="bold" />
+
+                                                <ImageView
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_weight="20"
+                                                    android:src="@drawable/ic_favorite_red_24dp"
+                                                    android:visibility="gone" />
+
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:id="@+id/DimondDeals"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_weight="50"
+                                    app:cardCornerRadius="16dp">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/hotItem2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="200dp"
+                                            android:scaleType="centerCrop" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentBottom="true"
+                                            android:background="#4D000000"
+                                            android:orientation="vertical"
+                                            android:padding="8dp">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/calibri"
+                                                android:text="Furniture"
+                                                android:textColor="#FFFFFF"
+                                                android:textSize="14sp"
+                                                android:textStyle="bold" />
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="4dp"
+                                                android:orientation="horizontal"
+                                                android:weightSum="100">
+
+                                                <TextView
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="80"
+                                                    android:fontFamily="@font/calibri"
+                                                    android:text="Rs 9k - 50k"
+                                                    android:textColor="#FFFFFF"
+                                                    android:textSize="12sp"
+                                                    android:textStyle="bold" />
+
+                                                <ImageView
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_weight="20"
+                                                    android:src="@drawable/ic_favorite_white_24dp"
+                                                    android:visibility="gone"/>
+
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+                                </android.support.v7.widget.CardView>
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:weightSum="100">
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/PlatiniumDeals"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="50"
+                                app:cardCornerRadius="16dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/hotItem3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="200dp"
+                                        android:scaleType="centerCrop" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="#4D000000"
+                                        android:orientation="vertical"
+                                        android:padding="8dp">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/calibri"
+                                            android:text="Sports"
+                                            android:textColor="#FFFFFF"
+                                            android:textSize="14sp"
+                                            android:textStyle="bold" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="4dp"
+                                            android:orientation="horizontal"
+                                            android:weightSum="100">
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="80"
+                                                android:fontFamily="@font/calibri"
+                                                android:text="RS 44 - RS 9k "
+                                                android:textColor="#FFFFFF"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold" />
+
+                                            <ImageView
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"
+                                                android:layout_weight="20"
+                                                android:src="@drawable/ic_favorite_red_24dp"
+                                                android:visibility="gone" />
+
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+                                </RelativeLayout>
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/GoaldDeals"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="50"
+                                app:cardCornerRadius="16dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/hotItem4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="200dp"
+                                        android:scaleType="centerCrop" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="#4D000000"
+                                        android:orientation="vertical"
+                                        android:padding="8dp">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/calibri"
+                                            android:text="Home Appliances"
+                                            android:textColor="#FFFFFF"
+                                            android:textSize="14sp"
+                                            android:textStyle="bold" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="4dp"
+                                            android:orientation="horizontal"
+                                            android:weightSum="100">
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="80"
+                                                android:fontFamily="@font/calibri"
+                                                android:text="RS 5k - RS 90k "
+                                                android:textColor="#FFFFFF"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold" />
+
+                                            <ImageView
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"
+                                                android:layout_weight="20"
+                                                android:src="@drawable/ic_favorite_red_24dp" />
+
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:weightSum="100">
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/SilverDeals"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="50"
+                                app:cardCornerRadius="16dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/hotItem5"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="200dp"
+                                        android:scaleType="centerCrop" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="#4D000000"
+                                        android:orientation="vertical"
+                                        android:padding="8dp">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/calibri"
+                                            android:text="Makeup"
+                                            android:textColor="#FFFFFF"
+                                            android:textSize="14sp"
+                                            android:textStyle="bold" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="4dp"
+                                            android:orientation="horizontal"
+                                            android:weightSum="100">
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="80"
+                                                android:fontFamily="@font/calibri"
+                                                android:text="RS 200 - RS 10k "
+                                                android:textColor="#FFFFFF"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold" />
+
+                                            <ImageView
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"
+                                                android:layout_weight="20"
+                                                android:src="@drawable/ic_favorite_red_24dp"
+                                                android:visibility="gone" />
+
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/BronezDeals"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="50"
+                                app:cardCornerRadius="16dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/hotItem6"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="200dp"
+                                        android:scaleType="centerCrop" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="#4D000000"
+                                        android:orientation="vertical"
+                                        android:padding="8dp">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/calibri"
+                                            android:text="Wearings"
+                                            android:textColor="#FFFFFF"
+                                            android:textSize="14sp"
+                                            android:textStyle="bold" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="4dp"
+                                            android:orientation="horizontal"
+                                            android:weightSum="100">
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="80"
+                                                android:fontFamily="@font/calibri"
+                                                android:text="RS 2k - RS 9k "
+                                                android:textColor="#FFFFFF"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold" />
+
+                                            <ImageView
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"
+                                                android:layout_weight="20"
+                                                android:src="@drawable/ic_favorite_red_24dp"
+                                                android:visibility="gone" />
+
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:weightSum="100">
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/PlatiniumDeals12"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="50"
+                                app:cardCornerRadius="16dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/hotItem7"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="200dp"
+                                        android:scaleType="centerCrop" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="#4D000000"
+                                        android:orientation="vertical"
+                                        android:padding="8dp">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/calibri"
+                                            android:text="Sports"
+                                            android:textColor="#FFFFFF"
+                                            android:textSize="14sp"
+                                            android:textStyle="bold" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="4dp"
+                                            android:orientation="horizontal"
+                                            android:weightSum="100">
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="80"
+                                                android:fontFamily="@font/calibri"
+                                                android:text="RS 44 - RS 9k "
+                                                android:textColor="#FFFFFF"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold" />
+
+                                            <ImageView
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"
+                                                android:layout_weight="20"
+                                                android:src="@drawable/ic_favorite_red_24dp"
+                                                android:visibility="gone" />
+
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+                                </RelativeLayout>
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/GoaldDeals12"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="50"
+                                app:cardCornerRadius="16dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/hotItem8"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="200dp"
+                                        android:scaleType="centerCrop" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="#4D000000"
+                                        android:orientation="vertical"
+                                        android:padding="8dp">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/calibri"
+                                            android:text="Home Appliances"
+                                            android:textColor="#FFFFFF"
+                                            android:textSize="14sp"
+                                            android:textStyle="bold" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="4dp"
+                                            android:orientation="horizontal"
+                                            android:weightSum="100">
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="80"
+                                                android:fontFamily="@font/calibri"
+                                                android:text="RS 5k - RS 90k "
+                                                android:textColor="#FFFFFF"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold" />
+
+                                            <ImageView
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"
+                                                android:layout_weight="20"
+                                                android:src="@drawable/ic_favorite_red_24dp" />
+
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+        </RelativeLayout>
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/ic_favorite_white_24dp"
+            app:fabSize="normal" />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#f7f7f7"
+            android:elevation="4dp"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="100">
+
+            <LinearLayout
+                android:id="@+id/home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_home_gray_24dp" />
+
+                <View
+                    android:layout_width="84dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorPrimaryDark" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/notification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/search" />
+
+                <View
+                    android:layout_width="84dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/message_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/message" />
+
+                <View
+                    android:layout_width="84dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/person_linear_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/mylocation" />
+
+                <View
+                    android:layout_width="84dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
